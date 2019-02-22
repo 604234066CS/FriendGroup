@@ -6,27 +6,38 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { FirendrestProvider } from '../providers/firendrest/firendrest';
+import { FriendlistPage } from '../pages/friendlist/friendlist';
+import { FrienddetailPage } from '../pages/frienddetail/frienddetail';
+import { HttpClientModule } from '@angular/common/http';
+import { FriendrestProvider } from '../providers/firendrest/firendrest';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    FrienddetailPage,
+    FriendlistPage
+   
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    FriendlistPage,
+    FrienddetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirendrestProvider
+    FriendrestProvider
   ]
 })
 export class AppModule {}

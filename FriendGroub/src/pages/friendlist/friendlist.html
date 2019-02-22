@@ -1,9 +1,3 @@
-<!--
-  Generated template for the FriendlistPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>friendlist</ion-title>
@@ -11,5 +5,21 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list *ngIf="friends">
+    <ion-item *ngFor="let friend of friends" text-wrap>
+      <ion-thumbnail item-start>
+        <img src='{{friend.picture}}'>
+      </ion-thumbnail>
+      <h2>{{friend.firstName }}</h2>
+      <p>{{friend.studentID }}</p>
+      <p>{{friend.birthday }}</p>
+      <button ion-button clear item-end (click)="showDetail(friend.studentID)">
+        <ion-icon name="list-box"></ion-icon>&nbsp;         
+        View   
+      </button>
+    </ion-item>        
+  </ion-list>
+  <button ion-button full color="dark" (click)="gotoBack()">
+      Back
+    </button>
 </ion-content>

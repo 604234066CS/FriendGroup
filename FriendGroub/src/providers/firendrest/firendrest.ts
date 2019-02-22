@@ -1,17 +1,24 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
+import { Friend } from '../../models/friend.model';
 
-/*
-  Generated class for the FirendrestProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+
 @Injectable()
-export class FirendrestProvider {
+export class FriendrestProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello FirendrestProvider Provider');
+  private url:string="https://raw.githubusercontent.com/604234066CS/MyFriend/master/json"
+
+  constructor(public http : HttpClient) {
+    console.log('Hello FriendrestProvider Provider');
+  }
+
+  getBookList():Observable<any>{
+    return this.http.get<Friend>(this.url);
+  }
+  getFriendList():Observable<any>{
+    return this.http.get<Friend>(this.url);
   }
 
 }
