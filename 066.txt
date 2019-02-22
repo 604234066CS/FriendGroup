@@ -1,0 +1,38 @@
+1) ไปยังไดเร็คทรอรี่ของ นศ.
+ d:
+ cd 604234066
+
+2) เซ็ตผู้ใช้งาน Git
+ git config --global user.email "604234066@parichat.skru.ac.th"
+ git config --global user.name "604234066CS"
+
+3) สร้างโปรเจค ionic
+ ionic start lab3 tabs
+
+4) 
+cd lab3
+
+5) เปิดโปรเจ็คในไดเร็คทรอรี่ปัจจุบันใน Visual Studio Code
+ code .
+=====================================================
+
+6) สร้าง Git กับข้อมูลในไดเร็คทรอรี่ปัจจุบ้น
+ git init
+
+7) ระบุข้อมูลที่ต้องการบันทึก
+ git add.
+       บันทึกการแก้ไข
+ git commit -m "first commit"
+
+8) ผูก Repository ใน github กับโปรเจ็ค
+git remote add origin https://github.com/604234066CS/lab3.git
+
+แก้ไขการผูก repository (ในกรณีพอมพ์ผิด)
+git remote set -url origin https://github.com/604234066CS/lab3.git
+
+9) push ครั้งแรก
+git push -u origin master
+
+git add .
+git commit -m "xxx"
+git push
